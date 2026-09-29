@@ -20,5 +20,14 @@
             <button routerLink="/login" class="login-btn" type="button">Login</button>
             <button routerLink="/join-yra" class="join-yra-btn" type="button">Join YRA</button>
         </div>
+        <div class="theme">
+            <span>Select Background:</span>
+            <select (change)="handleBgColorSelection($event)">
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="red">Red</option>
+                <option value="black">Black</option>
+            </select>
+        </div>
     </nav>
 </header>

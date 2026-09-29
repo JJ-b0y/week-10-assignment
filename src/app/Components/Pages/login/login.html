@@ -1,10 +1,13 @@
-<div class="page">
+<div
+    class="page"
+    [ngStyle]="{'background-color': backgroundColor}"
+>
     <div class="login-container">
         <span id="yra">YRA ACCOUNT</span>
         <h1>Welcome back</h1>
         <p>Sign in to access your member dashboard.</p>
         <div class="form-container">
-            <form (submit)="onSubmit($event)">
+            <form>
                 <div class="email">
                     <label for="email">Email address</label>
                     <input
@@ -27,7 +30,7 @@
                         placeholder="▪▪▪▪▪▪▪▪"
                         [formField]="loginForm.password"
                     >
-                    @if (loginForm.password().dirty() && loginForm.password().invalid()) {
+                    @if (loginForm.password().touched() && loginForm.password().invalid()) {
                         <ul>
                             @for (err of loginForm.password().errors(); track err) {
                                 <li>{{ err.message }}</li>
@@ -39,7 +42,15 @@
                     <input type="checkbox">
                     <label for="checkbox">Remember me</label>
                 </div>
+                <!-- <button
+                    (click)="loginUsingPromise($event)"
+                    type="submit"
+                    [disabled]="loginForm().invalid()"
+                >
+                    Sign in
+                </button> -->
                 <button
+                    (click)="loginUsingObservable($event)"
                     type="submit"
                     [disabled]="loginForm().invalid()"
                 >

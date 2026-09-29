@@ -1,9 +1,13 @@
 .page {
+    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .login-container {
+    position: absolute;
+    z-index: 100;
+    background: white;
     border: 1px solid hsl(200, 23%, 95%);
     box-shadow: 0 6px 18px hsla(197, 53%, 16%, 0.04);
     border-radius: 20px;
@@ -13,7 +17,7 @@
     margin-top: 8px;
     margin-bottom: 100px;
 }
-span, p, .form-container {
+span, p, .form-container, .create-acct a {
     font-family: Inter, ui-sans-serif, system-ui;
 }
 #yra {
@@ -86,6 +90,10 @@ button {
 }
 button:hover {
     transform: translateY(-1px);
+    background: hsl(30, 100%, 58%);
+}
+button:active {
+    background: hsl(30, 100%, 64%);
 }
 #new-yra {
     font-size: 14px;

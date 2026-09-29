@@ -8,7 +8,6 @@ import { Media } from './Components/Pages/media/media';
 import { Opportunities } from './Components/Pages/opportunities/opportunities';
 import { Community } from './Components/Pages/community/community';
 import { Login } from './Components/Pages/login/login';
-import { EventDetails } from './Components/Pages/Event-Page/event-details/event-details';
 import { JoinYra } from './Components/Pages/join-yra/join-yra';
 
 export const routes: Routes = [
@@ -22,5 +21,4 @@ export const routes: Routes = [
     { path: "community", component: Community },
     { path: "login", component: Login },
     { path: "join-yra", component: JoinYra },
-    { path: "events/event-details/:id", component: EventDetails},
 ];

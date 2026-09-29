@@ -1,54 +1,7 @@
-<div class="container">
-    <div class="event-grid">
-        @for (event of events; track event.id) {
-            <div class="event-card">
-                <div class="event-card-head">
-                    <div class="event-title">{{ event.title }}</div>
-                </div>
-                <div class="event-card-body">
-                    <div class="event-type">{{ event.type }}</div>
-                    <div class="event-shortSubTitle">{{ event.shortSubTitle }}</div>
-                    <div class="mini-info">
-                        <span>{{ event.shortDate }}</span>
-                        <span>▪</span>
-                        <span>{{ event.mode }}</span>
-                        <span>▪</span>
-                        <span>{{ event.duration }}</span>
-                    </div>
-                    <div class="event-desc">{{ event.shortDesc }}</div>
-                    <div class="event-fee">Registration fee: <b>{{ event.regFee }}</b></div>
-                    <div class="btns">
-                        <button
-                            class="register-btn"
-                            (click)="viewEventDetails(event.id)"
-                        >
-                            Register now
-                        </button>
-                        <button class="s-q-btn">
-                            <a
-                                routerLink="/events"
-                                [queryParams]="{
-                                    type: event.type,
-                                }"
-                            >
-                                Query Event
-                            </a>
-                        </button>
-                        <button class="s-q-btn">
-                            <a
-                                routerLink="/events"
-                                [queryParams]="{
-                                    type: event.type,
-                                    sort: event.regFee,
-                                    filter: event.mode
-                                }"
-                            >
-                                Query Event
-                            </a>
-                        </button>
-                    </div>  
-                </div>
-            </div>
-        }
-    </div>
+<div 
+    class="page"
+    [ngStyle]="{'background-color': backgroundColor}"
+    [ngClass]="{'white-text': isBlackBackground}"
+>
+    <h1>Hello, {{ componentName() }}</h1>
 </div>

@@ -1,90 +1,9 @@
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.page {
+    top: 0;
+    margin: 0;
+    min-height: 1000px;
+    padding-top: 18px;
 }
-.event-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 36px;
-}
-.event-card {
-    height: 550px;
-    width: 450px;
-    overflow: hidden;
-    background: white;
-    border: 1px solid hsl(0, 0%, 85%);
-    border-radius: 16px;
-    box-shadow: 0 5px 18px hsla(197, 53%, 16%, 0.04);
-}
-.event-title {
-    height: 150px;
-    background: linear-gradient(135deg,hsl(192, 58%, 55%), hsl(192, 58%, 60%), hsl(192, 58%, 75%));
-    display: grid;
-    place-items: center;
+.white-text {
     color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 26px;
-}
-.event-card-body {
-    font-family: Inter, ui-sans-serif, system-ui;
-    display: block;
-    padding: 22px;
-}
-.event-type {
-    display: inline-flex;
-    padding: 5px 9px;
-    margin-bottom: 6px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: bold;
-    background: hsl(194, 63%, 95%);
-    color: hsl(192, 58%, 25%);
-}
-.event-shortSubTitle {
-    color: black;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.mini-info {
-    display: flex;
-    gap: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    color: hsl(0, 0%, 50%);
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-.event-desc, .event-fee {
-    color: hsl(0, 0%, 20%);
-    margin-bottom: 10px;
-}
-button {
-    display: block;
-    border-radius: 10px;
-    padding: 16px 22px;
-    font-size: 1.1em;
-    font-weight: 750;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    cursor: pointer;
-}
-button:hover {
-    transform: translateY(-1px);
-}
-.register-btn {
-    color: white;
-    background-color: hsl(30, 100%, 54%);
-    box-shadow: 0 7px 18px hsla(28, 100%, 55%, 0.22);
-    margin-bottom: 16px;
-    border: none;
-}
-.s-q-btn {
-    background-color: white;
-    margin-bottom: 10px;
-}
-.s-q-btn a {
-    text-decoration: none;
-    color: hsl(194, 68%, 23%);
 }

@@ -1,1 +1,7 @@
-<p>programmes works!</p>
+<div 
+    class="page"
+    [ngStyle]="{'background-color': backgroundColor}"
+    [ngClass]="{'white-text': isBlackBackground}"
+>
+    <h1>Hello, {{ componentName() }}</h1>
+</div>

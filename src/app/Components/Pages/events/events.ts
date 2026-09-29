@@ -1,70 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { eventList } from '../../../Services/eventList';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Component, OnInit, signal } from '@angular/core';
+import { BackgroundColorService } from '../../../Services/BackgroundColorService/background-color-service';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-events',
-  imports: [RouterLink],
+  imports: [NgClass, NgStyle],
   templateUrl: './events.html',
   styleUrl: './events.css',
 })
 export class Events implements OnInit {
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {}
+  constructor(private backgroundColorService: BackgroundColorService) {}
+  
+  componentName = signal("Events");
 
-  events = eventList;
+  backgroundColor: string = '';
 
-  viewEventDetails(id: number) {
-    this.router.navigate(['/events/event-details', id]);
-  }
+  isBlackBackground: boolean = false;
 
   ngOnInit(): void {
-    console.log("Event Page Successfully Mounted!");
+    // Subject
+    // this.backgroundColorService.$selectedBgColor.subscribe({
+    //   next:(value) => {
+    //     console.log(`I have received the value: "${value}" from the Subject`)
+    //     this.backgroundColor = value;
+    //     if (this.backgroundColor === "black") {
+    //       this.isBlackBackground = true;
+    //     } else {
+    //       this.isBlackBackground = false;
+    //     }
+    //   },
+    //   error:(err) => {
+    //     console.error("Failed to receive value: ", err);
+    //   },
+    // });
 
-    this.activatedRoute.queryParamMap.subscribe({
-      next: (data) => {
-        const type = data.get("type");
-        const sort = data.get("sort");
-        const filter = data.get("filter");
-
-        console.log({ type, sort, filter });
-      },
-      error(err) {
-        console.error("Error retrieving query: ", err);
-      },
-      complete() {
-        console.log("Query Retrieved Successfully!");
-      },
-    })
-  }
-
-  singleQueryEvent(type: string) {
-    this.router.navigate(
-      ['/events'],
-      {
-        queryParams: {
-          type,
+    // Behavior Subject
+    this.backgroundColorService.$selectedBGColorBehaviorSubject.subscribe({
+      next:(value) => {
+        console.log(`I have received the value: "${value}" from the Behavior Subject`)
+        this.backgroundColor = value;
+        if (this.backgroundColor === "black") {
+          this.isBlackBackground = true;
+        } else {
+          this.isBlackBackground = false;
         }
-      }
-    );
-
-    console.log("Queried by types: ", { type });
-  }
-
-  multipleQueryEvent(type: string, sort: string, filter: string) {
-    this.router.navigate(
-      ['/events'],
-      {
-        queryParams: {
-          type,
-          sort,
-          filter
-        }
-      }
-    );
-
-    console.log("Queried Parameters: ", { type, sort, filter });
+      },
+      error:(err) => {
+        console.error("Failed to receive value: ", err);
+      },
+    });
   }
 }
