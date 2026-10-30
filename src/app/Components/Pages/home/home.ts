@@ -1,53 +1,11 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { BackgroundColorService } from '../../../Services/BackgroundColorService/background-color-service';
-import { NgClass, NgStyle } from '@angular/common';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  imports: [NgStyle, NgClass],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home implements OnInit {
-  constructor(private backgroundColorService: BackgroundColorService) {}
-
+export class Home {
   componentName = signal("Home");
-
-  backgroundColor: string = '';
-
-  isBlackBackground: boolean = false;
-
-  ngOnInit(): void {
-    // Subject
-    // this.backgroundColorService.$selectedBgColor.subscribe({
-    //   next:(value) => {
-    //     console.log(`I have received the value: "${value}" from the Subject`)
-    //     this.backgroundColor = value;
-    //     if (this.backgroundColor === "black") {
-    //       this.isBlackBackground = true;
-    //     } else {
-    //       this.isBlackBackground = false;
-    //     }
-    //   },
-    //   error:(err) => {
-    //     console.error("Failed to receive value: ", err);
-    //   },
-    // });
-
-    // Behavior Subject
-    this.backgroundColorService.$selectedBGColorBehaviorSubject.subscribe({
-      next:(value) => {
-        console.log(`I have received the value: "${value}" from the Behavior Subject`)
-        this.backgroundColor = value;
-        if (this.backgroundColor === "black") {
-          this.isBlackBackground = true;
-        } else {
-          this.isBlackBackground = false;
-        }
-      },
-      error:(err) => {
-        console.error("Failed to receive value: ", err);
-      },
-    });
-  }
 }

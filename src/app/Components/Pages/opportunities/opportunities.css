@@ -1,9 +1,26 @@
-.page {
-    top: 0;
-    margin: 0;
-    min-height: 1000px;
-    padding-top: 18px;
+li a {
+    text-decoration: none;
 }
-.white-text {
-    color: white;
+
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.opportunities-page {
+    display: flex;
+    gap: 30px;
+}
+
+aside {
+    background: hsl(30, 100%, 54%);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: black;
+    padding-right: 20px;
 }

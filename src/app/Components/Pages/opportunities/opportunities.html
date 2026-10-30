@@ -1,7 +1,15 @@
-<div 
-    class="page"
-    [ngStyle]="{'background-color': backgroundColor}"
-    [ngClass]="{'white-text': isBlackBackground}"
->
-    <h1>Hello, {{ componentName() }}</h1>
+<h1>Hello, {{ componentName() }}</h1>
+<div class="opportunities-page">
+    <aside>
+        <nav>
+            <ul>
+                <li><a routerLink="/opportunities/resource-opportunities">Resource Opportunities</a></li>
+                <li><a routerLink="/opportunities/programs-opportunities">Programs Opportunities</a></li>
+                <li><a routerLink="/opportunities/community-opportunities">Community Opportunities</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="child-route">
+        <router-outlet></router-outlet>
+    </div>
 </div>

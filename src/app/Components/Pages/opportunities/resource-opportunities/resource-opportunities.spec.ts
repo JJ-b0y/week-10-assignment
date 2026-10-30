@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Media } from './media';
+import { ResourceOpportunities } from './resource-opportunities';
 
-describe('Media', () => {
-  let component: Media;
-  let fixture: ComponentFixture<Media>;
+describe('ResourceOpportunities', () => {
+  let component: ResourceOpportunities;
+  let fixture: ComponentFixture<ResourceOpportunities>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Media],
+      imports: [ResourceOpportunities],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Media);
+    fixture = TestBed.createComponent(ResourceOpportunities);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,53 +1,16 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { BackgroundColorService } from '../../../Services/BackgroundColorService/background-color-service';
-import { NgClass, NgStyle } from '@angular/common';
+import { Component, signal } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-opportunities',
-  imports: [NgStyle, NgClass],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './opportunities.html',
   styleUrl: './opportunities.css',
 })
-export class Opportunities implements OnInit {
-  constructor(private backgroundColorService: BackgroundColorService) {}
-
+export class Opportunities {
+  
   componentName = signal("Opportunities");
 
-  backgroundColor: string = '';
+  progressUnsaved = true;
 
-  isBlackBackground: boolean = false;
-
-  ngOnInit(): void {
-    // Subject
-    // this.backgroundColorService.$selectedBgColor.subscribe({
-    //   next:(value) => {
-    //     console.log(`I have received the value: "${value}" from the Subject`)
-    //     this.backgroundColor = value;
-    //     if (this.backgroundColor === "black") {
-    //       this.isBlackBackground = true;
-    //     } else {
-    //       this.isBlackBackground = false;
-    //     }
-    //   },
-    //   error:(err) => {
-    //     console.error("Failed to receive value: ", err);
-    //   },
-    // });
-
-    // Behavior Subject
-    this.backgroundColorService.$selectedBGColorBehaviorSubject.subscribe({
-      next:(value) => {
-        console.log(`I have received the value: "${value}" from the Behavior Subject`)
-        this.backgroundColor = value;
-        if (this.backgroundColor === "black") {
-          this.isBlackBackground = true;
-        } else {
-          this.isBlackBackground = false;
-        }
-      },
-      error:(err) => {
-        console.error("Failed to receive value: ", err);
-      },
-    });
-  }
 }
